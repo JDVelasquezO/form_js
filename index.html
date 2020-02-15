@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Formulario</title>
+</head>
+<body class="grey lighten-2">
+    <main class="container">
+        <div class="row">
+            <div class="card-panel white">
+                <h2>Formulario</h2><br><br>
+                <div class="row">
+                    <form id="form">
+                        <div class="input-field col s6">
+                            <input autofocus id="name" type="text" class="validate">
+                            <label class="active" for="name">Nombre Completo</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="Fecha de Nacimiento" type="text" class="datepicker">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <p>
+                                <label>
+                                  <input id="married" class="with-gap" name="group1" type="radio" checked />
+                                  <span>Casado</span>
+                                </label>
+                              </p>
+                              <p>
+                                <label>
+                                  <input id="single" class="with-gap" name="group1" type="radio" />
+                                  <span>Soltero</span>
+                                </label>
+                              </p>
+
+                              <div id="spouses_age" class="input-field col s6">
+                                <input autofocus id="name" type="number" class="validate">
+                                <label class="active" for="name">Edad de Conyuge</label>
+                            </div>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <p>
+                                <label>
+                                  <input id="sons" class="with-gap" name="group2" type="radio" checked />
+                                  <span>Tiene Hijos</span>
+                                </label>
+                              </p>
+                              <p>
+                                <label>
+                                  <input id="not_sons" class="with-gap" name="group2" type="radio" />
+                                  <span>No Tiene Hijos</span>
+                                </label>
+                              </p>
+
+                            <div id="info_sons">
+                                <div id="number_sons" class="input-field col s6">
+                                  <input autofocus id="name" type="number" class="validate">
+                                  <label class="active" for="name">Número de Hijos</label>
+                              </div>
+  
+                                <div id="age_sons" class="input-field col s6">
+                                  <input autofocus id="name" type="text" class="validate">
+                                  <label class="active" for="name">Edad de Hijos</label>
+                              </div>
+                            </div>
+                        </div>
+
+
+                        
+                        <button id="send" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems);
+        });
+    </script>
+    <script src="/main.js"></script>
+</body>
+</html>
