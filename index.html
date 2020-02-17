@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="input-field col s6">
-                            <input placeholder="Fecha de Nacimiento" type="text" class="datepicker">
+                            <input id="date" placeholder="Fecha de Nacimiento" type="text" class="datepicker">
                         </div>
 
                         <div class="input-field col s6">
@@ -40,7 +40,7 @@
                               </p>
 
                               <div id="spouses_age" class="input-field col s6">
-                                <input autofocus id="name" type="number" class="validate">
+                                <input autofocus id="ageSpouse" type="number" class="validate">
                                 <label class="active" for="name">Edad de Conyuge</label>
                             </div>
                         </div>
@@ -61,23 +61,29 @@
 
                             <div id="info_sons">
                                 <div id="number_sons" class="input-field col s6">
-                                  <input autofocus id="name" type="number" class="validate">
-                                  <label class="active" for="name">Número de Hijos</label>
-                              </div>
-  
-                                <div id="age_sons" class="input-field col s6">
-                                  <input autofocus id="name" type="text" class="validate">
-                                  <label class="active" for="name">Edad de Hijos</label>
-                              </div>
+                                  <input autofocus id="numberOfSons" type="number" class="validate">
+                                  <label class="active" for="name">Número de Hijos menores de 21 años</label>
+                                </div>
                             </div>
                         </div>
-
-
                         
                         <button id="send" class="btn waves-effect waves-light" type="submit" name="action">Enviar
                             <i class="material-icons right">send</i>
                         </button>
                     </form>
+                    <br>
+                    <div class="row">
+                      <div class="col s12 m6">
+                        <div class="card">
+                          <div class="card-content black-text">
+                            <span class="card-title">Total:
+                            </span>
+                            <p id="info">
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,7 +93,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.datepicker');
-            var instances = M.Datepicker.init(elems);
+            var instances = M.Datepicker.init(elems, { 
+              defaultDate: new Date(1975, 0, 16),
+              minDate: new Date(1975, 0, 16),
+              maxDate: new Date(2002, 1, 16) ,
+              yearRange: 27
+            });
         });
     </script>
     <script src="/main.js"></script>
